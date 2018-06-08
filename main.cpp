@@ -1,9 +1,9 @@
 //#############################################################################
 // ARCHIVO             : nombre de archivo.extension
-// AUTOR/ES            : nombre/s de autor/es
+// AUTOR/ES            : Javier Pereyra/ Juan Gonzalez
 // VERSION             : 0.01 beta.
-// FECHA DE CREACION   : dd/mm/aaaa.
-// ULTIMA ACTUALIZACION: dd/mm/aaaa.
+// FECHA DE CREACION   : 08/06/2018.
+// ULTIMA ACTUALIZACION: 08/06/2018.
 // LICENCIA            : GPL (General Public License) - Version 3.
 //
 //  **************************************************************************
@@ -44,9 +44,9 @@
 // Si este programa se va a compilar en Windows, descomente las tres lineas
 // siguientes, y comente las tres lineas de "COMPILACION EN LINUX".
 //-----------------------------------------------------------------------------
-#ifndef _WIN32
-  # define _WIN32
-#endif
+//#ifndef _WIN32
+//  # define _WIN32
+//#endif
 
 //=============================================================================
 // COMPILACION EN LINUX
@@ -55,8 +55,25 @@
 // siguientes, y comente las tres lineas de "COMPILACION EN WINDOWS".
 //-----------------------------------------------------------------------------
 //#ifndef _LINUX
-//  # define _LINUX
+  //# define _LINUX
 //#endif
+
+//=================CODIGO COSMICO MULTIPLATAFORMA=======================================//
+// Con este codigo, vamos directo de windows a linux en un build //
+#ifdef _WIN32
+           #define _WIN32
+           #define  Hola 3
+   //define something for Windows (32-bit)
+#elif __linux
+           #define _LINUX
+           #define  Hola 2
+    // linux
+#elif __unix // all unices not caught above
+    // Unix
+#elif __posix
+    // POSIX
+#endif
+
 
 //*****************************************************************************
 //                             INCLUSIONES ESTANDAR
@@ -81,7 +98,7 @@ using namespace std;
 //------------------------------------------------------------------------------
 int main()
 {
-
+    cout<<Hola;
     //--------------------------------------------------------------------------
     // FIN DE LA FUNCION main() SIN ERRORES.
     //--------------------------------------------------------------------------
