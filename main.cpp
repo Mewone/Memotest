@@ -55,23 +55,23 @@
 // siguientes, y comente las tres lineas de "COMPILACION EN WINDOWS".
 //-----------------------------------------------------------------------------
 //#ifndef _LINUX
-  //# define _LINUX
+ // # define _LINUX
 //#endif
 
 //=================CODIGO COSMICO MULTIPLATAFORMA=======================================//
 // Con este codigo, vamos directo de windows a linux en un build //
-#ifdef _WIN32
-           #define hola 3
-   // Aca va el codigo loco para Ventanas 10
-#elif __linux
 
+#ifdef _WIN32
+           #define _WIN32
+   //define something for Windows (32-bit)
+#elif __linux
+           #define _LINUX
     // linux
 #elif __unix // all unices not caught above
     // Unix
 #elif __posix
     // POSIX
 #endif
-
 
 //*****************************************************************************
 //                             INCLUSIONES ESTANDAR
@@ -85,6 +85,9 @@
 //                             INCLUSIONES PERSONALES
 //=============================================================================
 #include "CSYSTEM/csystem.h" // Libreria para multiplataforma.
+#include "menu.h"
+#include "funciones.h"
+#include <string.h>
 //==============================================================================
 // DECLARACION DEL ESPACIO DE NOMBRES POR DEFECTO
 //------------------------------------------------------------------------------
@@ -96,7 +99,51 @@ using namespace std;
 //------------------------------------------------------------------------------
 int main()
 {
-    cout << hola;
+    char opcion[1];
+    bool salir= false;
+    while(!salir)
+    {
+
+        menuPrincipal();
+        cout<<"Ingresa una opción: ";
+        sys::getline(opcion,1);
+        //Validacion de entrada. ( Solo ingreso de uno, dos y tres ).
+        while(!validarEntero(opcion) || !strlen(opcion) || opcion[0] < '1' || opcion[0] > '3')
+        {
+            cout<<"No te hagas el loco"<<endl;
+            sys::getline(opcion,1);
+        }
+
+
+        //Switch elemental.
+        switch(opcion[0])
+        {
+        case '1':
+        {
+            cout<<"Empezo el juego"<<endl;
+        }break;
+        case '2':
+        {
+            cout<<"Necesitas una mano?. ya fue man! perdistes!"<<endl;
+
+
+        }break;
+        case '3':
+        {
+            salir = true;
+            cout<<"Salida:Exit:Ausfahrt:Sortie:123...."<<endl;
+        }break;
+
+        }
+
+        cin.get();
+        //Limpiamos la pantallita.
+        sys::cls();
+
+
+
+
+    }
     //--------------------------------------------------------------------------
     // FIN DE LA FUNCION main() SIN ERRORES.
     //--------------------------------------------------------------------------
