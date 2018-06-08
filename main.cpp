@@ -61,12 +61,10 @@
 //=================CODIGO COSMICO MULTIPLATAFORMA=======================================//
 // Con este codigo, vamos directo de windows a linux en un build //
 #ifdef _WIN32
-           #define _WIN32
-           #define  Hola 3
-   //define something for Windows (32-bit)
+           #define hola 3
+   // Aca va el codigo loco para Ventanas 10
 #elif __linux
-           #define _LINUX
-           #define  Hola 2
+
     // linux
 #elif __unix // all unices not caught above
     // Unix
@@ -98,7 +96,7 @@ using namespace std;
 //------------------------------------------------------------------------------
 int main()
 {
-    cout<<Hola;
+    cout << hola;
     //--------------------------------------------------------------------------
     // FIN DE LA FUNCION main() SIN ERRORES.
     //--------------------------------------------------------------------------
