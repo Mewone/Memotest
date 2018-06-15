@@ -21,3 +21,23 @@
 1529102556 /home/jpereyra/Documents/UTN/Memotest/funciones.h
 	"menu.h"
 
+1529103244 source:c:\users\juan\pepito\memotest\main.cpp
+	<iostream>
+	<cstdlib>
+	"CSYSTEM/csystem.h"
+	"menu.h"
+
+1529100508 c:\users\juan\pepito\memotest\csystem\csystem.h
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<ctime>
+	<windows.h>
+	<unistd.h>
+
+1529103325 c:\users\juan\pepito\memotest\menu.h
+	"funciones.h"
+	<string.h>
+
+1529103437 c:\users\juan\pepito\memotest\funciones.h
+

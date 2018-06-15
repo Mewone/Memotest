@@ -5,16 +5,11 @@
 
 using namespace std;
 
-
-
-
 void menuPrincipal()
 {
-
-cout<<"1. Jugar"<<endl;
-cout<<"2. Ayuda"<<endl;
-cout<<"3. Salir"<<endl;
-
+    cout<<"1. Jugar"<<endl;
+    cout<<"2. Ayuda"<<endl;
+    cout<<"3. Salir"<<endl;
 }
 
 void menu()
@@ -24,7 +19,6 @@ void menu()
     bool salir= false;
     while(!salir)
     {
-
         menuPrincipal();
         cout<<"Ingresa una opción: ";
         sys::getline(opcion,1);
@@ -46,25 +40,18 @@ void menu()
         case '2':
         {
             cout<<"Necesitas una mano?. ya fue man! perdistes!"<<endl;
-
-
         }break;
         case '3':
         {
             salir = true;
             cout<<"Salida:Exit:Ausfahrt:Sortie:123...."<<endl;
         }break;
-
         }
 
-        cin.get();
+        pedirEnter();
         //Limpiamos la pantallita.
         sys::cls();
-
-
     }
-
-
 }
 
 
