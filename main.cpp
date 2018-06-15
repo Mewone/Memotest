@@ -85,13 +85,26 @@
 //                             INCLUSIONES PERSONALES
 //=============================================================================
 #include "CSYSTEM/csystem.h" // Libreria para multiplataforma.
-#include "funciones.h"
+#include "menu.h"
 
 //==============================================================================
 // DECLARACION DEL ESPACIO DE NOMBRES POR DEFECTO
 //------------------------------------------------------------------------------
 using namespace std;
-// Defino Constante de tamaño para mi matriz.
+// Constantes Universales
+const int Y = 8;
+const int X = 8;
+
+
+// Defino estructura para la Matrix:
+struct Pieza
+{
+    char symbol = '?';
+    bool mostrar = false;
+
+};
+
+Pieza tabla[Y][X];
 
 
 
