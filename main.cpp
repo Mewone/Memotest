@@ -85,13 +85,14 @@
 //                             INCLUSIONES PERSONALES
 //=============================================================================
 #include "CSYSTEM/csystem.h" // Libreria para multiplataforma.
-#include "menu.h"
 #include "funciones.h"
-#include <string.h>
+
 //==============================================================================
 // DECLARACION DEL ESPACIO DE NOMBRES POR DEFECTO
 //------------------------------------------------------------------------------
 using namespace std;
+// Defino Constante de tamaño para mi matriz.
+
 
 
 //==============================================================================
@@ -99,51 +100,7 @@ using namespace std;
 //------------------------------------------------------------------------------
 int main()
 {
-    char opcion[1];
-    bool salir= false;
-    while(!salir)
-    {
-
-        menuPrincipal();
-        cout<<"Ingresa una opción: ";
-        sys::getline(opcion,1);
-        //Validacion de entrada. ( Solo ingreso de uno, dos y tres ).
-        while(!validarEntero(opcion) || !strlen(opcion) || opcion[0] < '1' || opcion[0] > '3')
-        {
-            cout<<"No te hagas el loco"<<endl;
-            sys::getline(opcion,1);
-        }
-
-
-        //Switch elemental.
-        switch(opcion[0])
-        {
-        case '1':
-        {
-            cout<<"Empezo el juego"<<endl;
-        }break;
-        case '2':
-        {
-            cout<<"Necesitas una mano?. ya fue man! perdistes!"<<endl;
-
-
-        }break;
-        case '3':
-        {
-            salir = true;
-            cout<<"Salida:Exit:Ausfahrt:Sortie:123...."<<endl;
-        }break;
-
-        }
-
-        cin.get();
-        //Limpiamos la pantallita.
-        sys::cls();
-
-
-
-
-    }
+   menu();
     //--------------------------------------------------------------------------
     // FIN DE LA FUNCION main() SIN ERRORES.
     //--------------------------------------------------------------------------
