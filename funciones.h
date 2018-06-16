@@ -15,14 +15,18 @@ bool validarEntero(char *c)
         }
     }
     return esEntero;
+
 }
 
 void pedirEnter()
 {
-    char enter[2];
-    cout << "\n\n\n(Presione enter para continuar)";
-    sys::getline(enter, 2);
+
+char enter[2];
+cout<<"\n\n\n(presione enter para continuar)"<<endl;
+sys::getline(enter,2);
+
 }
+
 
 
 

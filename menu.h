@@ -1,15 +1,32 @@
 #ifndef MENU_H_INCLUDED
 #define MENU_H_INCLUDED
 #include "funciones.h"
+#include "tablero.h"
 #include <string.h>
 
 using namespace std;
 
+
+
+void bienvenida()
+{
+cout<<"Juga este jueguito, que ta bueno"<<endl;
+pedirEnter();
+}
+
+void despedida()
+{
+cout<<"Chau."<<endl;
+}
+
+
 void menuPrincipal()
 {
-    cout<<"1. Jugar"<<endl;
-    cout<<"2. Ayuda"<<endl;
-    cout<<"3. Salir"<<endl;
+sys::cls();
+cout<<"1. Jugar"<<endl;
+cout<<"2. Ayuda"<<endl;
+cout<<"3. Salir"<<endl;
+
 }
 
 void menu()
@@ -19,6 +36,7 @@ void menu()
     bool salir= false;
     while(!salir)
     {
+
         menuPrincipal();
         cout<<"Ingresa una opción: ";
         sys::getline(opcion,1);
@@ -40,18 +58,26 @@ void menu()
         case '2':
         {
             cout<<"Necesitas una mano?. ya fue man! perdistes!"<<endl;
+            mostrarMatriz()
+
+
         }break;
         case '3':
         {
             salir = true;
             cout<<"Salida:Exit:Ausfahrt:Sortie:123...."<<endl;
         }break;
+
         }
 
-        pedirEnter();
+        cin.get();
         //Limpiamos la pantallita.
         sys::cls();
+
+
     }
+
+
 }
 
 

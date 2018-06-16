@@ -1,9 +1,8 @@
 # depslib dependency file v1.0
-1529102427 source:/home/jpereyra/Documents/UTN/Memotest/main.cpp
+1529109723 source:/home/jpereyra/Documents/UTN/Memotest/main.cpp
 	<iostream>
 	<cstdlib>
 	"CSYSTEM/csystem.h"
-	"funciones.h"
 	"menu.h"
 
 1528500455 /home/jpereyra/Documents/UTN/Memotest/CSYSTEM/csystem.h
@@ -14,12 +13,12 @@
 	<windows.h>
 	<unistd.h>
 
-1529102072 /home/jpereyra/Documents/UTN/Memotest/menu.h
+1529109897 /home/jpereyra/Documents/UTN/Memotest/menu.h
 	"funciones.h"
+	"tablero.h"
 	<string.h>
 
-1529102556 /home/jpereyra/Documents/UTN/Memotest/funciones.h
-	"menu.h"
+1529108102 /home/jpereyra/Documents/UTN/Memotest/funciones.h
 
 1529103244 source:c:\users\juan\pepito\memotest\main.cpp
 	<iostream>
@@ -40,4 +39,6 @@
 	<string.h>
 
 1529103437 c:\users\juan\pepito\memotest\funciones.h
+
+1529109898 /home/jpereyra/Documents/UTN/Memotest/tablero.h
 

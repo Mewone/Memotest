@@ -55,29 +55,29 @@
 // siguientes, y comente las tres lineas de "COMPILACION EN WINDOWS".
 //-----------------------------------------------------------------------------
 //#ifndef _LINUX
- // # define _LINUX
+// # define _LINUX
 //#endif
 
 //=================CODIGO COSMICO MULTIPLATAFORMA=======================================//
 // Con este codigo, vamos directo de windows a linux en un build //
 
 #ifdef _WIN32
-           #define _WIN32
-   //define something for Windows (32-bit)
+#define _WIN32
+//define something for Windows (32-bit)
 #elif __linux
-           #define _LINUX
-    // linux
+#define _LINUX
+// linux
 #elif __unix // all unices not caught above
-    // Unix
+// Unix
 #elif __posix
-    // POSIX
+// POSIX
 #endif
 
 //*****************************************************************************
 //                             INCLUSIONES ESTANDAR
 //=============================================================================
 #include <iostream> // Libreria de flujos de  Entrada/Salida  que contiene  los
-                    // objetos cin, cout y endl.
+// objetos cin, cout y endl.
 
 #include <cstdlib>  // Libreria estandar que contiene la funcion exit().
 
@@ -105,7 +105,57 @@ struct Pieza
 
 Pieza tabla[Y][X];
 
-void bienvenida();
+
+void cargarMatriz(Pieza t[8][8])
+{
+
+    int f;
+    int c;
+    char vec[64] = {'a','a','b','b','c','c','d','d','e','e','f',
+                    'f','g','g','h','h','i','i','j','j','k','k','l','l',
+                    'm','m','n','n','o','o','p','p','q','q','r','r','s',
+                    's','t','t','v','v','w','w','x','x','y','y','z','z',
+                    'A','A','B','B','C','C','D','D','E','E','F',
+                    'F','G','G'
+                   };
+    int i = 0;
+
+//Very Difficult by Tevez.
+    while( i<64 )
+    {
+
+        if ( t[4][6].symbol == '?')
+        {
+
+            t[4][6].symbol = vec[i];
+            i++;
+
+        }
+    }
+}
+
+void mostrarMatriz(Pieza t[8][8])
+{
+
+for(int f=0;f<8;f++)
+{
+
+
+    for(int c=0;c<8;c++)
+    {
+
+    cout<<t[f][c].symbol<<" ";
+
+    }
+
+
+cout<<endl;
+
+}
+
+
+
+}
 
 //==============================================================================
 // FUNCION PRINCIPAL - PUNTO DE INICIO DEL PROYECTO
@@ -114,6 +164,7 @@ int main()
 {
     bienvenida();
     menu();
+    despedida();
     //--------------------------------------------------------------------------
     // FIN DE LA FUNCION main() SIN ERRORES.
     //--------------------------------------------------------------------------
